@@ -63,6 +63,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ```
 
 ## Setting up the application
+`IMPORTANT... THIS IS THE ARMHF VERSION`
 
 `The keygen operation on the first run of the container can take a long time, be patient`
 
