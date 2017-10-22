@@ -24,7 +24,7 @@ RUN \
 
 # install unifi
  curl -o \
- /tmp/unifi.deb -L\
+ /tmp/unifi.deb -L \
 	"http://dl.ubnt.com/unifi/${UNIFI_VER}/unifi_sysvinit_all.deb" && \
  dpkg -i /tmp/unifi.deb && \
  rm /usr/lib/unifi/lib/native/Linux/armhf/libubnt_webrtc_jni.so && \
