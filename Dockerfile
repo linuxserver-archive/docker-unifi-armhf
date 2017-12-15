@@ -1,19 +1,19 @@
 FROM lsiobase/xenial.armhf
-MAINTAINER sparklyballs
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="sparklyballs"
 
 # package versions
-ARG UNIFI_VER="5.6.22"
+ARG UNIFI_VER="5.6.26"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 
-# install packages
 RUN \
+ echo "**** install packages ****" && \
  apt-get update && \
  apt-get install -y \
 	binutils \
@@ -21,22 +21,19 @@ RUN \
 	mongodb-server \
 	openjdk-8-jre-headless \
 	wget && \
-
-# install unifi
+ echo "**** install unifi ****" && \
  curl -o \
  /tmp/unifi.deb -L \
 	"http://dl.ubnt.com/unifi/${UNIFI_VER}/unifi_sysvinit_all.deb" && \
  dpkg -i /tmp/unifi.deb && \
- rm /usr/lib/unifi/lib/native/Linux/armhf/libubnt_webrtc_jni.so && \
-
-# cleanup
+ echo "**** cleanup ****" && \
  apt-get clean && \
  rm -rf \
 	/tmp/* \
 	/var/lib/apt/lists/* \
 	/var/tmp/*
 
-# add local files
+# add local files
 COPY root/ /
 
 # Volumes and Ports
