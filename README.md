@@ -37,6 +37,16 @@ docker create \
   lsioarmhf/unifi
 ```
 
+You can choose between ,using tags, latest (default lts 5.6 release branch, and no tag required)  or the unstable (5.7) release branch of unifi.
+
+Add one of the tags, if required, to the linuxserver/unifi line of the run/create command in the following format, linuxserver/unifi:unstable
+
+#### Tags
+
++ **unstable** : releases from the 5.7x branch.
+
+## Parameters
+
 `The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
@@ -100,6 +110,7 @@ Use `ubnt` as the password to login and `$address` is the IP address of the host
 
 ## Versions
 
++ **14.03.18:** Add unstable branch for 5.7x releases.
 + **19.02.18:** Add port 6789 to support throughput test.
 + **09.02.18:** Update to 5.6.30.
 + **08.02.18:** Use loop to simplify symlinks.
