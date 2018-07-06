@@ -110,6 +110,7 @@ Use `ubnt` as the password to login and `$address` is the IP address of the host
 
 ## Versions
 
++ **06.06.18:** Update to 5.6.39.
 + **24.03.18:** Update to 5.6.37.
 + **24.03.18:** Update to 5.6.36.
 + **14.03.18:** Add unstable branch for 5.7x releases.
